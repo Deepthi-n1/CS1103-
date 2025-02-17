@@ -9,11 +9,13 @@ fi
 # Get the delay from the first argument
 delay=$1
 shift # Remove the first argument so we can loop over commands
+num = $#
 # Execute each command with the specified delay
 for command in "$@"; do
-echo "Executing: $command"
-eval "$command" # Execute the command
-echo "Waiting for $delay seconds..."
-sleep "$delay" # Delay before executing the next command
+echo "Number of commands = $#"
+#echo "Executing: $command"
+echo "$command" # Execute the command
+#echo "Waiting for $delay seconds..."
+#sleep "$delay" # Delay before executing the next command
 done
 echo "All commands executed."
