@@ -35,14 +35,13 @@ search_file() {
 
 num_of_files_and_folders() {
     echo "Counting the number of files and folders in the current directory..."
-    file_count=$(find . -type f | wc -l)
-    folder_count=$(find . -type d | wc -l)
-
-    echo "Number of files: $file_count"
-    echo "Number of folders: $folder_count"
+    echo "Files:"
+    ls -l | grep -v '^d'
+    echo "Folders:"
+    ls -l | grep '^d'
     echo ""
 }
-     
+    
 # Main menu for user interaction
 echo "Piping Commands Manager"
 echo "1. List contents of the current directory"
